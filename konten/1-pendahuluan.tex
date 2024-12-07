@@ -3,25 +3,77 @@
 \section{Latar Belakang}
 
 % Ubah paragraf-paragraf berikut sesuai dengan latar belakang dari tugas akhir
-Pesatnya perkembangan roket yang merupakan \lipsum[2]
+    
 
-\lipsum[3]
+Perkembangan teknologi \textit{blockchain} telah membuka peluang baru dalam berbagai sektor, dengan \textit{Non-Fungible Tokens (NFT}) muncul sebagai inovasi yang menjanjikan, terutama dalam industri \textit{ticketing}, karya seni, dan koleksi digital. Pada proses pengerjaan \textit{minting} NFT merupakan penciptaan token unik didalam \textit{blockchain} agar menjadi aspek krusial dalam implementasi teknologi untuk tiket konser musik. Proses pengubahan tiket menjadi NFT dicatat secara permanen di \textit{blockchain}, memberikan bukti kepemilikan yang transparan dan tidak dapat dimanipulasi.
+
+Wang \textit{et al.}  menegaskan bahwa proses \textit{minting NFT }menciptakan representasi digital unik dari aset, yang sangat relevan untuk tiket acara yang memiliki karakteristik \textit{non-fungible}\cite{ref1}. Fokus pada\textit{ minting} NFT adalah proses yang dapat menciptakan hubungan antara objek digital dan aset yang berada pada \textit{blockchain} dan dapat juga mengatasi masalah pemalsuan dimana diproyeksikan mencapai nilai \$31 miliar pada tahun 2022\cite{ref2}. Sebuah studi oleh Regner \textit{et al.}  dalam mendemonstrasikan bahwa \textit{minting} NFT untuk tiket dapat secara efektif mengatasi masalah pemalsuan dan penjualan kembali tiket ilegal, serta memungkinkan manajemen yang lebih baik atas penjualan sekunder\parencite{ref3}
+
+Implementasi sistem \textit{minting} NFT untuk tiket konser memerlukan pengembangan \textit{smart contract} yang \textit{sophisticated}. Caldarelli  dalam "Ledger" menekankan pentingnya desain \textit{smart contract} yang \textit{robust} untuk aplikasi \textit{blockchain}, termasuk dalam proses minting NFT\cite{ref4}.Dengan menggabungkan proses \textit{minting} NFT dengan teknologi \textit{Web3.0}, ada peluang untuk meningkatkan efisiensi dan kemudahan akses sistem. Menurut Zou \textit{et al.} dalam "IEEE Internet of Things Journal", \textit{Web3.0 }dapat meningkatkan keamanan dan interoperabilitas sistem \textit{berbasis} \textit{blockchain}\parencite{ref5}
+
+Meskipun demikian, implementasi sistem \textit{minting} NFT untuk tiket konser menghadapi beberapa tantangan teknis. Chittoda dan Ghosh dalam konferensi ICACCCN mengidentifikasi masalah skalabilitas dan biaya transaksi sebagai hambatan utama dalam proses minting dan adopsi luas NFT \cite{ref6}. Optimasi proses minting menjadi krusial untuk mengatasi tantangan ini. Selain itu aspek hukum menjadi pertimbangan yang baik, Kugler dalam "Komunikasi ACM" membahas masalah teknis dan hukum yang terkait dengan minting dan penggunaan NFT, menekankan betapa pentingnya membangun protokol \textit{minting} yang efektif dan sesuai dengan peraturan\parencite{ref7}. Hal ini menjadi tantangan dalam pengembangan sistem \textit{ticketing} NFT yang dapat diadopsi secara luas. 
+
+Oleh karena itu, tujuan dari penelitian ini adalah untuk mengembangkan dan menerapkan sistem \textit{minting} NFT yang aman dan efisien untuk tiket konser musik dalam lingkungan \textit{marketplace} berbasis \textit{Web3.0}. Fokus utama akan diberikan pada optimasi proses \textit{minting}, termasuk kecepatan, biaya, dan keamanan. Pengembangan \textit{smart contract} yang kuat untuk \textit{minting} dan integrasi lancar dengan teknologi \textit{Web3.0} akan menjadi komponen utama penelitian ini. Hasil penelitian ini diharapkan dapat memberikan kontribusi yang signifikan terhadap perkembangan sistem \textit{ticketing} digital dan mendorong adopsi teknologi \textit{blockchain} dalam industri hiburan yang lebih luas. Dengan mengatasi tantangan teknis dan menawarkan solusi yang efektif, penelitian ini berpotensi mentransformasi cara tiket konser musik dikelola, didistribusikan, dan digunakan, membuka jalan bagi inovasi lebih lanjut dalam pengalaman konser digital.
 
 \section{Rumusan Masalah}
 
-% Ubah paragraf berikut sesuai dengan rumusan masalah dari tugas akhir
-Berdasarkan hal yang telah dipaparkan di latar belakang, \lipsum[4]
+Berdasarkan hal yang telah dipaparkan di latar belakang, didapatkan bahwa permasalahan yang ada pada masalah riset ini yaitu :
+\begin{enumerate}
+    \item Bagaimana merancang sistem minting NFT untuk tiket konser musik menggunakan Solana Blockchain yang dapat memastikan setiap tiket memiliki atribut unik, seperti identitas pemilik, nomor kursi, dan tanggal konser?
+    \item Bagaimana mengimplementasikan integrasi antara smart contract pada Solana Blockchain dan web berbasis Web3.0 untuk  minting , pembelian, dan transfer tiket konser dalam bentuk NFT?
+    \item Bagaimana membangun marketplace berbasis NFT yang memungkinkan pengguna untuk membuat, membeli, dan menjual aset digital menggunakan teknologi blockchain?
+\end{enumerate}
 
-\section{Batasan Masalah atau Ruang Lingkup}
 
-\lipsum[6]
+
+\section{Batasan Permasalahan}
+
+Dalam pengembangan sistem marketplace berbasis \textit{blockchain} untuk minting NFT tiket konser musik, batasan permasalahan yang ditetapkan adalah sebagai berikut:
+
+\begin{enumerate}
+    \item \textbf{Teknologi Blockchain:}
+    \begin{itemize}
+        \item Sistem ini menggunakan \textit{Solana Blockchain} sebagai infrastruktur utama untuk transaksi dan pencatatan NFT.
+        \item Transaksi hanya dilakukan pada jaringan \textit{Devnet} untuk tujuan pengembangan dan pengujian, bukan pada jaringan \textit{Mainnet}.
+    \end{itemize}
+
+    \item \textbf{NFT (Non-Fungible Token):}
+    \begin{itemize}
+        \item NFT yang dihasilkan merepresentasikan tiket konser musik dengan metadata seperti nama acara, lokasi, tanggal, waktu, dan kategori tiket (VIP, reguler).
+        \item \textit{Minting NFT} dilakukan melalui integrasi \textit{smart contract} yang telah diimplementasikan sesuai dengan protokol Solana.
+    \end{itemize}
+
+    \item \textbf{Marketplace:}
+    \begin{itemize}
+        \item Marketplace ini hanya mendukung fungsi dasar seperti minting, penjualan, dan pembelian tiket berbasis NFT.
+        \item Transaksi dilakukan menggunakan mata uang kripto \textit{SOL}.
+    \end{itemize}
+
+    \item \textbf{Dompet Digital:}
+    \begin{itemize}
+        \item Sistem hanya mendukung dompet digital \textit{Phantom Wallet} untuk autentikasi pengguna, transaksi, dan penyimpanan NFT.
+    \end{itemize}
+    \item \textbf{Platform dan Teknologi:}
+    \begin{itemize}
+        \item {Frontend:} Dibangun menggunakan \textit{Next.js} dengan integrasi \textit{Web3.js} untuk komunikasi dengan blockchain.
+        \item {Backend:} Backend dengan fungsionalitas terbatas yang mendukung proses \textit{minting NFT} dan penyimpanan metadata.
+        \item Sistem tidak memiliki fitur analitik, manajemen pengguna, atau integrasi pihak ketiga di luar blockchain Solana.
+    \end{itemize}
+
+\end{enumerate}
+
+
 
 \section{Tujuan}
 
-% Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
-Tujuan dari penelitian ini adalah \lipsum[7][1-14]
+Penelitian ini bertujuan untuk merancang dan mengimplementasikan sistem \textit{minting NFT tickets} berbasis \textit{Solana Blockchain} untuk memastikan keaslian tiket konser musik dengan memanfaatkan teknologi \textit{Web3.0}.
 
 \section{Manfaat}
 
-% Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
-Manfaat dari penelitian ini adalah \lipsum[8][1-14]
+Penelitian ini memberikan manfaat sebagai berikut:
+\begin{enumerate}
+    \item Mencegah pemalsuan tiket konser melalui sistem verifikasi berbasis \textit{blockchain}.
+    \item Meningkatkan transparansi dalam pencatatan riwayat kepemilikan tiket.
+    \item Sistem ini memberikan panduan teknis bagi pengembang dalam membangun marketplace NFT yang mencakup proses minting, penyimpanan metadata, dan koneksi dengan dompet digital seperti Phantom Wallet.
+    \item Penelitian ini juga berkontribusi pada pengembangan ekosistem blockchain dengan memanfaatkan jaringan Solana, yang dikenal dengan biaya transaksi rendah dan kecepatan tinggi, sehingga mendukung penerapan NFT dalam industri hiburan.
+\end{enumerate}
